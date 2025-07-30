@@ -1,0 +1,36 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void func(int n){
+	int count=1;
+	for(int i=0;i<n;i++){
+			int len=i+1;
+			int start=count;
+			int end=count+len-1;
+			if(i%2==0){
+				//increasing order 
+				for(int j=start;j<=end;j++){
+					cout<<j;
+					if(j!=end)cout<<"*";
+				}
+				
+			}
+			else{
+				//decreasing order
+				for(int j=end;j>=start;j--){
+					cout<<j;
+					if(j!=start)cout<<"*";
+				}
+			}
+			count+=len;
+			cout<<endl;
+		}
+	}
+	
+
+int main() {
+	func(7);
+	return 0;
+}
